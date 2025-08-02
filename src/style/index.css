@@ -1,19 +1,77 @@
 body {
-  background-color: lightgray;
-  margin: 0;
   display: flex;
-  height: 100vh;
   justify-content: center;
   align-items: center;
+  background-color: lightgray;
   font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  height: 100vh;
 }
 body .counter-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
   background-color: white;
+  padding: 20px;
+  border-radius: 10px;
 }
 body .counter-container h1 {
   font-size: 500%;
   text-align: center;
 }
-body .counter-container h1:hover {
+body .counter-container .warning-message {
   color: red;
+  text-align: center;
+}
+body .counter-container input {
+  padding: 5px;
+  border: 1px solid lightgray;
+  cursor: pointer;
+  transition: 0.5s;
+}
+body .counter-container input:hover {
+  background-color: rgb(224, 224, 224);
+}
+body .counter-container .button-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+body .counter-container .button-container button {
+  cursor: pointer;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  transition: 0.5s;
+}
+body .counter-container .button-container button:active {
+  color: gray;
+}
+body .counter-container .button-container .increment-button {
+  background-color: limegreen;
+}
+body .counter-container .button-container .increment-button:hover {
+  background-color: rgb(24, 231, 24);
+}
+body .counter-container .button-container .increment-button:active {
+  background-color: rgb(9, 129, 9);
+}
+body .counter-container .button-container .reset-button {
+  background-color: rgb(50, 156, 205);
+}
+body .counter-container .button-container .reset-button:hover {
+  background-color: rgb(11, 167, 240);
+}
+body .counter-container .button-container .reset-button:active {
+  background-color: rgb(35, 110, 145);
+}
+body .counter-container .button-container .decrement-button {
+  background-color: rgb(216, 23, 23);
+}
+body .counter-container .button-container .decrement-button:hover {
+  background-color: rgb(252, 2, 2);
+}
+body .counter-container .button-container .decrement-button:active {
+  background-color: rgb(252, 0, 0);
 }/*# sourceMappingURL=index.css.map */

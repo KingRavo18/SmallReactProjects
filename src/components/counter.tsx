@@ -23,7 +23,7 @@ export default function Counter() {
 
     const decrement = () => {
         if(counter - changingValue < 0) {
-            setWarning("Counter cannot go below 0");
+            setWarning("Warning: Counter cannot go below 0");
         } else {
             setCounter(c => c - changingValue);
             setWarning("");
@@ -34,11 +34,11 @@ export default function Counter() {
         <div className="counter-container">
             <h1>{counter}</h1>
             <input type="number" min="1" value={changingValue} onChange={changeValue}/>
-            <p>{warning}</p>
-            <div>
-                <button onClick={increment}>Increment</button>
-                <button onClick={reset}>Reset</button>
-                <button onClick={decrement}>Decrement</button>
+            <p className="warning-message">{warning}</p>
+            <div className="button-container">
+                <button className="increment-button" onClick={increment}>Increment</button>
+                <button className="reset-button" onClick={reset}>Reset</button>
+                <button className="decrement-button" onClick={decrement}>Decrement</button>
             </div>
         </div>
     );
