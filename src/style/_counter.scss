@@ -1,0 +1,10 @@
+.counter-container {
+        background-color: $projectBackground;
+        h1 {
+            font-size: 500%;
+            text-align: center;
+            &:hover{
+                color: red;
+            }
+        }
+    }
