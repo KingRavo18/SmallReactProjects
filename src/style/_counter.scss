@@ -1,36 +1,15 @@
 .counter-container {
     @include flexHorizontalCenter;
-    flex-direction: column;
-    background-color: $projectBackground;
-    padding: 20px;
-    border-radius: 10px;
+    @include container;
 
     h1 {
         font-size: 500%;
         text-align: center;
     }
 
-    .warning-message {
-        color:red;
-        text-align: center;
-    }
-    
-    input {
-        padding: 5px;
-        border: 1px solid lightgray;
-        cursor: pointer;
-        transition: $transitions;
-        &:hover{
-            background-color: $inputHover;
-        }
-    }
     .button-container {
         @include flexHorizontalCenter;
         gap: 10px;
-
-        button {
-            @include buttonTemplate;
-        }
 
         .increment-button{
             @include greenButton;

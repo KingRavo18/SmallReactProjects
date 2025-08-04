@@ -1,0 +1,14 @@
+.rng-container {
+    @include flexHorizontalCenter;
+    @include container;
+    gap: 10px;
+
+    h1, h2 {
+        font-size: 200%;
+        text-align: center;
+    }
+    button {
+        @include blueButton;
+    }
+        
+}

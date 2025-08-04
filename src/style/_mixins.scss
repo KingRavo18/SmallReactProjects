@@ -9,18 +9,6 @@
     justify-content: center;
 }
 
-@mixin buttonTemplate {
-    cursor: pointer;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 7px 14px;
-    transition: $transitions;
-    &:active{
-        color: gray;
-    }     
-}
-
 @mixin greenButton {
     background-color: limegreen;
     &:hover{
@@ -49,4 +37,11 @@
     &:active{
         background-color: rgb(35, 110, 145);
     }  
+}
+
+@mixin container {
+    flex-direction: column;
+    background-color: $projectBackground;
+    padding: 20px;
+    border-radius: 10px;
 }

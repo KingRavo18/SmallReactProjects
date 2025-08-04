@@ -8,6 +8,36 @@ body {
     margin: 0;
     height: 100vh;
 
+    input {
+        padding: 5px;
+        border: 1px solid lightgray;
+        cursor: pointer;
+        transition: $transitions;
+        &:hover{
+            background-color: $inputHover;
+        }
+    }
+
+    button {
+        cursor: pointer;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 7px 14px;
+        transition: $transitions;
+        &:active{
+            color: gray;
+        }     
+    }
+
+    .warning-message {
+        color:red;
+        text-align: center;
+    }
+
     @import "./sidebar";
     @import "./counter";
+    @import "./RNG";
+
+    
 }
