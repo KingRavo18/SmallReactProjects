@@ -1,6 +1,7 @@
 .counter-container {
     @include flexHorizontalCenter;
     @include container;
+    @include risingAnim;
 
     h1 {
         font-size: 500%;

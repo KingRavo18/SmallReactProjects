@@ -1,6 +1,7 @@
 .rng-container {
     @include flexHorizontalCenter;
     @include container;
+    @include risingAnim;
     gap: 10px;
 
     h1, h2 {
