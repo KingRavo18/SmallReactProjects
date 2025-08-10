@@ -38,6 +38,16 @@ body .sidebar {
   top: 0;
   width: auto;
   background-color: white;
+  animation-name: sidebarAnimation;
+  animation-duration: 2s;
+}
+@keyframes sidebarAnimation {
+  from {
+    left: -300px;
+  }
+  to {
+    left: 0;
+  }
 }
 body .sidebar p {
   padding: 0;
@@ -48,11 +58,9 @@ body .sidebar ul {
   padding: 0;
   margin-top: -10px;
 }
-body .sidebar ul li {
-  padding: 10px 0;
-}
 body .sidebar ul .nav-link {
   padding: 10px 20px;
+  display: block;
   text-decoration: none;
   cursor: pointer;
   color: black;
