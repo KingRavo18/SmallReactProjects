@@ -14,7 +14,9 @@ export default function RandomNumberGenerator() {
 
     const generateRN = () => {
         if(minValue < maxValue){
-            setRandomNumber(numberType === "Whole" ? Math.floor(Math.random() * (maxValue - minValue + 1)) + minValue : (Math.random() * (maxValue - minValue) + minValue));
+            setRandomNumber(Number(numberType === "Whole" ? 
+                                   Math.floor(Math.random() * (maxValue - minValue + 1)) + minValue : 
+                                  (Math.random() * (maxValue - minValue) + minValue).toFixed(2)));
             setWarning("");
         }else{
             setWarning("Minimum value cannot exceed the maximum!");
@@ -29,7 +31,6 @@ export default function RandomNumberGenerator() {
         setRandomNumber(0);
     }
     
-
     return(
         <div className="rng-container">
             <h1>Random Number Generator</h1>
@@ -41,12 +42,12 @@ export default function RandomNumberGenerator() {
             <p className="warning-message">{warning}</p>
             <div>
                 <label>
-                <input type="radio" value="Whole" name="typeOfNum" onChange={getNumberType} checked={numberType === "Whole"}/>
+                <input type="radio" value="Whole" onChange={getNumberType} checked={numberType === "Whole"}/>
                 Whole Numbers
                 </label>
                 <br/>
                 <label>
-                <input type="radio" value="Decimal" name="typeOfNum" onChange={getNumberType}/>
+                <input type="radio" value="Decimal" onChange={getNumberType} checked={numberType === "Decimal"}/>
                 Decimal Numbers
                 </label>
             </div>
@@ -57,5 +58,4 @@ export default function RandomNumberGenerator() {
 }
 
 
-//For decimals, you might want to limit decimal places
 //Store a history of generated numbers.
