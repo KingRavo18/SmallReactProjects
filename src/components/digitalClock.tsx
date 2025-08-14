@@ -1,9 +1,32 @@
 import { useState, useEffect } from "react";
 
 export default function DigitalClock() {
+
+    const[time, setTime] = useState<Date>(new Date());
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setTime(new Date())
+        }, 1000) 
+
+        return () => {
+            clearInterval(interval);
+        }
+    }, [])
+
+    const padZero = (num : number): string => (num < 10 ? "0" : "") + num;
+
+    const handleTime = () => {
+        const hours = time.getHours();
+        const minutes = time.getMinutes();
+        const seconds = time.getSeconds();
+
+        return `${padZero(hours)}:${padZero(minutes)}:${padZero(seconds)}`;
+    }
+
     return(
         <div className="digital-clock-container">
-            <h1>00:00:00</h1>
+            <h1>{handleTime()}</h1>
         </div>
     );
 }

@@ -213,6 +213,10 @@ body .digital-clock-container {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
   animation-name: risingAnim;
   animation-duration: 1s;
 }
@@ -227,6 +231,6 @@ body .digital-clock-container {
   }
 }
 body .digital-clock-container h1 {
-  font-size: 500%;
+  font-size: 700%;
   font-family: monospace;
 }/*# sourceMappingURL=index.css.map */
