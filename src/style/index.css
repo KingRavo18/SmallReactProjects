@@ -139,7 +139,7 @@ body .rng-container {
   border-radius: 10px;
   animation-name: risingAnim;
   animation-duration: 1s;
-  gap: 10px;
+  gap: 5px;
 }
 @keyframes risingAnim {
   from {

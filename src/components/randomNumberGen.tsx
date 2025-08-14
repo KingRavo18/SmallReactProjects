@@ -6,13 +6,15 @@ export default function RandomNumberGenerator() {
     const [maxValue, setMaxValue] = useState<number>(0);
     const [randomNumber, setRandomNumber] = useState<number>(0);
     const [warning, setWarning] = useState<string>("");
+    const [numberType, setNumberType] = useState<string>("Whole");
 
+    const getNumberType = (event: React.ChangeEvent<HTMLInputElement>) => setNumberType(event.target.value);
     const getMinValue = (event: React.ChangeEvent<HTMLInputElement>) => setMinValue(Number(event.target.value));
     const getMaxValue = (event: React.ChangeEvent<HTMLInputElement>) => setMaxValue(Number(event.target.value));   
 
     const generateRN = () => {
         if(minValue < maxValue){
-            setRandomNumber(Math.round(Math.random() * (maxValue - minValue)) + minValue);
+            setRandomNumber(numberType === "Whole" ? Math.floor(Math.random() * (maxValue - minValue + 1)) + minValue : (Math.random() * (maxValue - minValue) + minValue));
             setWarning("");
         }else{
             setWarning("Minimum value cannot exceed the maximum!");
@@ -20,6 +22,13 @@ export default function RandomNumberGenerator() {
             setMaxValue(0);
         }
     }
+
+    const reset = () => {
+        setMinValue(0);
+        setMaxValue(0);
+        setRandomNumber(0);
+    }
+    
 
     return(
         <div className="rng-container">
@@ -30,12 +39,23 @@ export default function RandomNumberGenerator() {
             <label>Maxiumum:</label>
             <input type="number" min="0" onChange={getMaxValue} value={maxValue}/>
             <p className="warning-message">{warning}</p>
+            <div>
+                <label>
+                <input type="radio" value="Whole" name="typeOfNum" onChange={getNumberType} checked={numberType === "Whole"}/>
+                Whole Numbers
+                </label>
+                <br/>
+                <label>
+                <input type="radio" value="Decimal" name="typeOfNum" onChange={getNumberType}/>
+                Decimal Numbers
+                </label>
+            </div>
+            <button onClick={reset}>Reset</button>
             <button onClick={generateRN}>Generate</button>
         </div>
     );
 }
-//Add a reset button.
 
-//Allow choosing decimal or whole number mode.
 
+//For decimals, you might want to limit decimal places
 //Store a history of generated numbers.
