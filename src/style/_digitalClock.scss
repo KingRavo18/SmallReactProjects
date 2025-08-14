@@ -1,0 +1,9 @@
+.digital-clock-container{
+    @include flexFullCenter;
+    @include risingAnim;
+
+    h1{
+        font-size: 500%;
+        font-family: monospace;
+    }
+}
