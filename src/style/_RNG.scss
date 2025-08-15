@@ -1,15 +1,26 @@
-.rng-container {
+.rng-program-container {
     @include flexHorizontalCenter;
-    @include container;
-    @include risingAnim;
-    gap: 5px;
+    gap: 10px;
+    
+    .rng-container {
+        @include flexHorizontalCenter;
+        @include container;
+        @include risingAnim;
+        gap: 5px;
 
-    h1, h2 {
-        font-size: 200%;
-        text-align: center;
+        h1, h2 {
+            font-size: 200%;
+            text-align: center;
+        }
+        button {
+            @include blueButton;
+        }      
     }
-    button {
-        @include blueButton;
+
+    .numberHistory-container {
+        @include risingAnim;
+        @include container;
+        overflow-y: auto;
+        max-height: 200px;
     }
-        
 }
