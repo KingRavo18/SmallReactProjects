@@ -61,7 +61,7 @@ export default function RandomNumberGenerator() {
             </div>
 
             <div className="numberHistory-container">
-                <h3>Previous Numbers</h3>
+                <h3>Number History</h3>
                 <div className="numberHistory-list-container">
                     <ol reversed>
                         {numberHistory.map((rng, index) =>
