@@ -169,6 +169,9 @@ body .rng-program-container .rng-container button:hover {
 body .rng-program-container .rng-container button:active {
   background-color: rgb(35, 110, 145);
 }
+body .rng-program-container .rng-container label {
+  cursor: pointer;
+}
 body .rng-program-container .numberHistory-container {
   animation-name: risingAnim;
   animation-duration: 1s;

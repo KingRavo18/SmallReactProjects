@@ -14,13 +14,16 @@
         }
         button {
             @include blueButton;
-        }      
+        }     
+        label {
+            cursor: pointer;
+        } 
     }
 
     .numberHistory-container {
         @include risingAnim;
         @include container;
         overflow-y: auto;
-        max-height: 200px;
+        max-height: 200px;  
     }
 }

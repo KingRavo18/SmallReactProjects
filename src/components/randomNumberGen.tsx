@@ -22,14 +22,12 @@ export default function RandomNumberGenerator() {
             setNumberHistory((n => [...n, newNumber].reverse()));
             setWarning("");
         }else{
-            setWarning("Minimum value cannot exceed the maximum!");
-            setMinValue(0);
-            setMaxValue(0);
+            setWarning(minValue == maxValue ? "Both values cannot be the same!" : "Minimum value cannot exceed the maximum!");
+            reset();
         }
     }
 
     const reset = () => {
-        setNumberHistory([]);
         setMinValue(0);
         setMaxValue(0);
         setRandomNumber(0);
@@ -72,5 +70,4 @@ export default function RandomNumberGenerator() {
     );
 }
 
-//Set up a unique case where both vvalues are the same
 //Clear history only on button click instead of reset also clearing it — keeps flexibility.
