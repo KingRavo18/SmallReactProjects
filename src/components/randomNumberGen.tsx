@@ -47,13 +47,13 @@ export default function RandomNumberGenerator() {
                 <p className="warning-message">{warning}</p>
                 <div>
                     <label>
-                    <input type="radio" value="Whole" onChange={getNumberType} checked={numberType === "Whole"}/>
-                    Whole Numbers
+                        <input type="radio" value="Whole" onChange={getNumberType} checked={numberType === "Whole"}/>
+                        Whole Numbers
                     </label>
                     <br/>
                     <label>
-                    <input type="radio" value="Decimal" onChange={getNumberType} checked={numberType === "Decimal"}/>
-                    Decimal Numbers
+                        <input type="radio" value="Decimal" onChange={getNumberType} checked={numberType === "Decimal"}/>
+                        Decimal Numbers
                     </label>
                 </div>
                 <button onClick={reset}>Reset</button>
