@@ -19,7 +19,7 @@ export default function RandomNumberGenerator() {
                                    Math.floor(Math.random() * (maxValue - minValue + 1)) + minValue : 
                                   (Math.random() * (maxValue - minValue) + minValue).toFixed(2));
             setRandomNumber(newNumber);
-            setNumberHistory((n => [...n, newNumber]));
+            setNumberHistory((n => [...n, newNumber].reverse()));
             setWarning("");
         }else{
             setWarning("Minimum value cannot exceed the maximum!");
@@ -62,7 +62,7 @@ export default function RandomNumberGenerator() {
 
             <div className="numberHistory-container">
                 <h3>Previous Numbers</h3>
-                <ol>
+                <ol reversed>
                     {numberHistory.map((rng, index) =>
                         <li key={index}>{rng}</li>
                     )}
@@ -72,5 +72,4 @@ export default function RandomNumberGenerator() {
     );
 }
 
-//Reverse the history list so newest numbers appear first:
 //Clear history only on button click instead of reset also clearing it — keeps flexibility.
