@@ -72,4 +72,5 @@ export default function RandomNumberGenerator() {
     );
 }
 
+//Set up a unique case where both vvalues are the same
 //Clear history only on button click instead of reset also clearing it — keeps flexibility.
