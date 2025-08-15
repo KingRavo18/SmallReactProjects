@@ -2,6 +2,10 @@
     @include flexHorizontalCenter;
     gap: 10px;
     
+    button {
+            @include blueButton;
+    }  
+
     .rng-container {
         @include flexHorizontalCenter;
         @include container;
@@ -12,9 +16,6 @@
             font-size: 200%;
             text-align: center;
         }
-        button {
-            @include blueButton;
-        }     
         label {
             cursor: pointer;
         } 
@@ -23,7 +24,13 @@
     .numberHistory-container {
         @include risingAnim;
         @include container;
-        overflow-y: auto;
-        max-height: 200px;  
+        height: 300px;
+
+        .numberHistory-list-container{
+            margin-bottom: 10px;
+            overflow-y: auto;
+            height: 200px;
+            border: 1px solid rgb(187, 187, 187);
+        }
     }
 }

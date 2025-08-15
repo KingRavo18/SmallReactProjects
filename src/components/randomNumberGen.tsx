@@ -32,6 +32,8 @@ export default function RandomNumberGenerator() {
         setMaxValue(0);
         setRandomNumber(0);
     }
+
+    const clearHistory = () => setNumberHistory([]);
     
     return(
         <div className="rng-program-container">
@@ -60,14 +62,15 @@ export default function RandomNumberGenerator() {
 
             <div className="numberHistory-container">
                 <h3>Previous Numbers</h3>
-                <ol reversed>
-                    {numberHistory.map((rng, index) =>
-                        <li key={index}>{rng}</li>
-                    )}
-                </ol>
+                <div className="numberHistory-list-container">
+                    <ol reversed>
+                        {numberHistory.map((rng, index) =>
+                            <li key={index}>{rng}</li>
+                        )}
+                    </ol>
+                </div>
+                <button onClick={clearHistory}>Clear History</button>
             </div>
         </div>
     );
 }
-
-//Clear history only on button click instead of reset also clearing it — keeps flexibility.
