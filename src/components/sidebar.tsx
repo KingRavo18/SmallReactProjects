@@ -10,6 +10,7 @@ export default function Sidebar() {
                 <li><Link to="/components/randomNumberGen" className="nav-link">RNG</Link></li>
                 <li><Link to="/components/colorPicker" className="nav-link">Color Picker</Link></li>
                 <li><Link to="/components/digitalClock" className="nav-link">Digital Clock</Link></li>
+                <li><Link to="/components/toDoList" className="nav-link">To Do List</Link></li>
             </ul>
         </nav>
     );

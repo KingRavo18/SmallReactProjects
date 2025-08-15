@@ -19,7 +19,7 @@ export default function RandomNumberGenerator() {
                                    Math.floor(Math.random() * (maxValue - minValue + 1)) + minValue : 
                                   (Math.random() * (maxValue - minValue) + minValue).toFixed(2));
             setRandomNumber(newNumber);
-            setNumberHistory((n => [...n, newNumber].reverse()));
+            setNumberHistory((n => [newNumber, ...n]));
             setWarning("");
         }else{
             setWarning(minValue == maxValue ? "Both values cannot be the same!" : "Minimum value cannot exceed the maximum!");
