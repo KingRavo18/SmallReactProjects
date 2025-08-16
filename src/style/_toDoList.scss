@@ -1,0 +1,22 @@
+.toDoList-Container {
+    @include flexHorizontalCenter;
+    @include container;
+    @include risingAnim;
+    gap: 5px;
+    width: 400px;
+
+    h1 {
+        font-size: 200%;
+        text-align: center;
+    }
+
+    button {
+        @include blueButton;
+    }
+
+    .task-list-container{
+        overflow-y: auto;
+        height: 200px;
+        border: 1px solid rgb(187, 187, 187);
+    }
+}
