@@ -306,4 +306,27 @@ body .toDoList-Container .task-list-container {
   overflow-y: auto;
   height: 200px;
   border: 1px solid rgb(187, 187, 187);
+}
+body .toDoList-Container .task-list-container ul {
+  margin: 0;
+  padding: 0;
+}
+body .toDoList-Container .task-list-container ul li {
+  padding: 10px;
+  display: flex;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  transition: 0.5s;
+}
+body .toDoList-Container .task-list-container ul li:hover {
+  background-color: rgb(216, 216, 216);
+}
+body .toDoList-Container .task-list-container ul .delete-button {
+  background-color: white;
+  padding: 5px;
+}
+body .toDoList-Container .task-list-container ul .delete-button:hover {
+  background-color: rgb(167, 167, 167);
 }/*# sourceMappingURL=index.css.map */

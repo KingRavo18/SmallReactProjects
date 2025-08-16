@@ -18,13 +18,21 @@ export default function ToDoList() {
         }
     }
 
+    const deleteTask = (index: number) => {
+        const updatedTasks = tasks.filter((_, i) => i !== index);
+        setTasks(updatedTasks);
+    }
+
     return(
         <div className="toDoList-Container">
             <h1>To Do List</h1>
             <div className="task-list-container">
                 <ul>
                     {tasks.map((task, index) => 
-                        <li key={index}>{task}</li>
+                        <li key={index}>
+                            <span>{task}</span> 
+                            <button className="delete-button" onClick={() => deleteTask(index)}>❌</button>
+                        </li>
                     )}
                 </ul>
             </div>
