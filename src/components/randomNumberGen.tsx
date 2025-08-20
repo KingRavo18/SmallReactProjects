@@ -2,12 +2,12 @@ import { useState } from "react";
 
 export default function RandomNumberGenerator() {
 
-    const [minValue, setMinValue] = useState<number>(0);
-    const [maxValue, setMaxValue] = useState<number>(0);
-    const [randomNumber, setRandomNumber] = useState<number>(0);
-    const [warning, setWarning] = useState<string>("");
-    const [numberType, setNumberType] = useState<string>("Whole");
-    const [numberHistory, setNumberHistory] = useState<Array<number>>([]);
+    const [minValue, setMinValue] = useState<number>(0),
+          [maxValue, setMaxValue] = useState<number>(0),
+          [randomNumber, setRandomNumber] = useState<number>(0),
+          [warning, setWarning] = useState<string>(""),
+          [numberType, setNumberType] = useState<string>("Whole"),
+          [numberHistory, setNumberHistory] = useState<Array<number>>([]);
 
     const getNumberType = (event: React.ChangeEvent<HTMLInputElement>) => setNumberType(event.target.value);
     const getMinValue = (event: React.ChangeEvent<HTMLInputElement>) => setMinValue(Number(event.target.value));

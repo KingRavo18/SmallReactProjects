@@ -2,9 +2,8 @@ import {useEffect, useState} from "react";
 
 export default function Counter() {
 
-    const counterValue = () => Number(localStorage.getItem('counterValue')) || 0;
-
-    const [counter, setCounter] = useState<number>(counterValue()),
+    const counterValue = () => Number(localStorage.getItem('counterValue')) || 0,
+          [counter, setCounter] = useState<number>(counterValue()),
           [changingValue, setChangingValue] = useState<number>(1),
           [warning, setWarning] = useState<string>("");
 
@@ -12,9 +11,7 @@ export default function Counter() {
         localStorage.setItem('counterValue', counter.toString());
     }, [counter]);
 
-    const changeValue = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setChangingValue(Number(event.target.value));
-    }
+    const changeValue = (event: React.ChangeEvent<HTMLInputElement>) => setChangingValue(Number(event.target.value));
 
     const increment = () => {
         setCounter(v => v + changingValue);

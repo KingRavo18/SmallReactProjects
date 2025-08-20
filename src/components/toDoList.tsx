@@ -2,9 +2,10 @@ import { useState } from "react";
 
 export default function ToDoList() {
 
-    const [tasks, setTasks] = useState<Array<string>>([]);
-    const [newTask, setNewTask] = useState<string>("");
-    const [warning, setWarning] = useState<string>("");
+    const [tasks, setTasks] = useState<Array<string>>([]),
+          [newTask, setNewTask] = useState<string>(""),
+          [warning, setWarning] = useState<string>("");
+
 
     const handleNewTask = (e: React.ChangeEvent<HTMLInputElement>) => setNewTask(e.target.value);
 
