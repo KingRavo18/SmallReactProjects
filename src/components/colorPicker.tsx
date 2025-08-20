@@ -1,8 +1,14 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function ColorPicker(){
 
-    const [color, setColor] = useState<string>("#ffffff");
+    const defaultColor = () => localStorage.getItem("setColor") || "#ffffff";
+    const [color, setColor] = useState<string>(defaultColor());
+
+    useEffect(() => {
+        localStorage.setItem("setColor", color)
+    }, [color]);
+
     const colorChange = (event: React.ChangeEvent<HTMLInputElement>) => setColor(event.target.value);
 
     return(
