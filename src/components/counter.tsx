@@ -3,13 +3,13 @@ import {useEffect, useState} from "react";
 export default function Counter() {
 
     const counterValue = () => Number(localStorage.getItem('counterValue')) || 0,
+          valueByWhichToChange = () => Number(localStorage.getItem('valueByWhichToChange')) || 1,
           [counter, setCounter] = useState<number>(counterValue()),
-          [changingValue, setChangingValue] = useState<number>(1),
+          [changingValue, setChangingValue] = useState<number>(valueByWhichToChange()),
           [warning, setWarning] = useState<string>("");
 
-    useEffect(() => {
-        localStorage.setItem('counterValue', counter.toString());
-    }, [counter]);
+    useEffect(() => localStorage.setItem('counterValue', counter.toString()), [counter]);
+    useEffect(() => localStorage.setItem('valueByWhichToChange', changingValue.toString()), [changingValue]);
 
     const changeValue = (event: React.ChangeEvent<HTMLInputElement>) => setChangingValue(Number(event.target.value));
 
