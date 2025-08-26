@@ -14,7 +14,7 @@ export default function Counter() {
     const changeValue = (event: React.ChangeEvent<HTMLInputElement>) => setChangingValue(Number(event.target.value));
 
     const increment = () => {
-        setCounter(v => v + changingValue);
+        setCounter(c => c + changingValue);
         setWarning("");
     }
 

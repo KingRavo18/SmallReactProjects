@@ -5,9 +5,7 @@ export default function ColorPicker(){
     const defaultColor = () => localStorage.getItem("setColor") || "#ffffff",
           [color, setColor] = useState<string>(defaultColor());
 
-    useEffect(() => {
-        localStorage.setItem("setColor", color)
-    }, [color]);
+    useEffect(() => localStorage.setItem("setColor", color), [color]);
 
     const colorChange = (event: React.ChangeEvent<HTMLInputElement>) => setColor(event.target.value);
 
@@ -17,7 +15,7 @@ export default function ColorPicker(){
             <div className="color-box" style={{backgroundColor: color}}>
                 <p>{color}</p>
             </div>
-            <input type="color" onChange={colorChange}/>
+            <input type="color" value={color} onChange={colorChange}/>
         </div>
     );
 }
