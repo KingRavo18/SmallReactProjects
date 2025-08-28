@@ -15,7 +15,7 @@ export default function Counter() {
 
     const increment = () => {
         setCounter(c => c + changingValue);
-        setWarning("");
+        setWarning(""); 
     }
 
     const reset = () => {
@@ -46,3 +46,9 @@ export default function Counter() {
         </div>
     );
 }
+
+//Use useEffect to set up event listeners safely.
+
+//Always clean up with removeEventListener.
+
+//Scope your handler so React state updates still work properly.
