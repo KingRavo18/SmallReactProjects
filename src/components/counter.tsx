@@ -33,6 +33,27 @@ export default function Counter() {
         }
     }
 
+    useEffect(() => {
+        const updateWithArrows = (event: KeyboardEvent) => {
+            switch(event.key){
+                case "ArrowUp":
+                    increment();
+                    break;
+                case "ArrowDown":
+                    decrement();
+                    break;
+                case "r":
+                    reset();
+                    break;
+            }
+        }
+        window.addEventListener("keydown", updateWithArrows)
+
+        return () => {
+            window.removeEventListener("keydown", updateWithArrows);
+        }
+    }, [increment, decrement]);
+
     return(
         <div className="counter-container">
             <h1>{counter}</h1>
@@ -46,9 +67,3 @@ export default function Counter() {
         </div>
     );
 }
-
-//Use useEffect to set up event listeners safely.
-
-//Always clean up with removeEventListener.
-
-//Scope your handler so React state updates still work properly.
