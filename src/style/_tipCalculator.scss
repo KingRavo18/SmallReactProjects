@@ -1,0 +1,15 @@
+.tip-calculator-container {
+    @include flexHorizontalCenter;
+    @include container;
+    @include risingAnim;
+    gap: 10px;
+
+    h1 {
+        font-size: 200%;
+        text-align: center;
+    }
+
+    button {
+        @include greenButton;
+    }
+}

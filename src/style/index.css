@@ -81,6 +81,7 @@ body .counter-container {
   background-color: white;
   padding: 20px;
   border-radius: 10px;
+  box-shadow: 0 10px 10px darkgray;
   animation-name: risingAnim;
   animation-duration: 1s;
 }
@@ -151,6 +152,7 @@ body .rng-program-container .rng-container {
   background-color: white;
   padding: 20px;
   border-radius: 10px;
+  box-shadow: 0 10px 10px darkgray;
   animation-name: risingAnim;
   animation-duration: 1s;
   gap: 5px;
@@ -179,6 +181,7 @@ body .rng-program-container .numberHistory-container {
   background-color: white;
   padding: 20px;
   border-radius: 10px;
+  box-shadow: 0 10px 10px darkgray;
   height: 300px;
 }
 @keyframes risingAnim {
@@ -205,6 +208,7 @@ body .ColorPicker-container {
   background-color: white;
   padding: 20px;
   border-radius: 10px;
+  box-shadow: 0 10px 10px darkgray;
   animation-name: risingAnim;
   animation-duration: 1s;
 }
@@ -250,6 +254,7 @@ body .digital-clock-container {
   background-color: white;
   padding: 20px;
   border-radius: 10px;
+  box-shadow: 0 10px 10px darkgray;
   animation-name: risingAnim;
   animation-duration: 1s;
 }
@@ -274,6 +279,7 @@ body .toDoList-Container {
   background-color: white;
   padding: 20px;
   border-radius: 10px;
+  box-shadow: 0 10px 10px darkgray;
   animation-name: risingAnim;
   animation-duration: 1s;
   gap: 5px;
@@ -329,4 +335,39 @@ body .toDoList-Container .task-list-container ul .delete-button {
 }
 body .toDoList-Container .task-list-container ul .delete-button:hover {
   background-color: rgb(167, 167, 167);
+}
+body .tip-calculator-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 10px 10px darkgray;
+  animation-name: risingAnim;
+  animation-duration: 1s;
+  gap: 10px;
+}
+@keyframes risingAnim {
+  from {
+    opacity: 0;
+    margin-top: 100px;
+  }
+  to {
+    opacity: 1;
+    margin-top: 0;
+  }
+}
+body .tip-calculator-container h1 {
+  font-size: 200%;
+  text-align: center;
+}
+body .tip-calculator-container button {
+  background-color: limegreen;
+}
+body .tip-calculator-container button:hover {
+  background-color: rgb(24, 231, 24);
+}
+body .tip-calculator-container button:active {
+  background-color: rgb(9, 129, 9);
 }/*# sourceMappingURL=index.css.map */
