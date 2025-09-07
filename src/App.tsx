@@ -5,6 +5,7 @@ import RandomNumberGenerator from "./components/randomNumberGen";
 import ColorPicker from "./components/colorPicker";
 import DigitalClock from "./components/digitalClock";
 import ToDoList from "./components/toDoList";
+import TipCalculator from "./components/tipCalculator";
 
 
 export default function App() {
@@ -17,6 +18,7 @@ export default function App() {
         <Route path="/components/colorPicker" element={<ColorPicker/>}/>
         <Route path="/components/digitalClock" element={<DigitalClock/>}/>
         <Route path="/components/toDoList" element={<ToDoList/>}/>
+        <Route path="/components/tipCalculator" element={<TipCalculator/>}/>
       </Routes>
     </BrowserRouter>
   )
