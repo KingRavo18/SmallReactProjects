@@ -2,8 +2,10 @@ import { useState } from "react";
 
 export default function TipCalculator() {
 
+    const moneyFormat = new Intl.NumberFormat("lv-LV", { style: "currency", currency: "EUR"});
     const [billAmount, setBillAmount] = useState<number>(0);
-    const [tipPercentage, setTipPercentage] = useState<number>(0);
+    const [tipPercentage, setTipPercentage] = useState<number>(10);
+    const [tipAmount, setTipAmount] = useState<string>(moneyFormat.format(0));
     const [total, setTotal] = useState<string>(new Intl.NumberFormat("lv-LV", { style: "currency", currency: "EUR"}).format(0));
     const [warning, setWarning] = useState<string>("");
 
@@ -21,7 +23,9 @@ export default function TipCalculator() {
             return setWarning("Please fill out the input fields.");
         }
 
-        setTotal(new Intl.NumberFormat("lv-LV", { style: "currency", currency: "EUR"}).format(billAmount + billAmount * tipPercentage / 100));
+        setWarning("");
+        setTipAmount(moneyFormat.format(billAmount * tipPercentage / 100));
+        setTotal(moneyFormat.format(billAmount + billAmount * tipPercentage / 100));
     }
 
     return(
@@ -34,7 +38,12 @@ export default function TipCalculator() {
             <input type="number" min="0" id="TipPercentage" value={tipPercentage} onChange={retrieveTipPercentage}/>
             <button onClick={calculate}>Calculate</button>
             <p className="warning-message">{warning}</p>
-            <p>Total: {total}</p>
+            <div className="result-containers">
+                <p>Tip: {tipAmount}</p>
+                <p>Total: {total}</p>
+            </div>
         </div>
     );
 }
+
+//Calculate automatically

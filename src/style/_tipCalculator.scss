@@ -12,4 +12,9 @@
     button {
         @include greenButton;
     }
+
+    .result-containers {
+        display: flex;
+        gap: 10px;
+    }
 }

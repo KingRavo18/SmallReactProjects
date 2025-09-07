@@ -370,4 +370,8 @@ body .tip-calculator-container button:hover {
 }
 body .tip-calculator-container button:active {
   background-color: rgb(9, 129, 9);
+}
+body .tip-calculator-container .result-containers {
+  display: flex;
+  gap: 10px;
 }/*# sourceMappingURL=index.css.map */
